@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/apo_web_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <am.apo.filharmonik.FusionWebView
+        android:id="@+id/apo_web_view_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
+
+    <ProgressBar
+        android:id="@+id/apo_web_load_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

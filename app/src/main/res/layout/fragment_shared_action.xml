@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="am.apo.filharmonik.SharedActionFragment">
+
+    <ImageButton
+        android:id="@+id/flip_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/management_info"
+        android:soundEffectsEnabled="false"
+        android:visibility="visible"/>
+
+    <ImageButton
+        android:id="@+id/share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/flip_button"
+        android:layout_toLeftOf="@id/flip_button"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/share_button"
+        android:background="@android:color/transparent"
+        android:visibility="visible"/>
+
+</RelativeLayout>

@@ -1,0 +1,229 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_screen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_bkg"
+    tools:context=".ApoMenuActivity">
+
+    <RelativeLayout
+        android:id="@+id/menu_items"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/menu_bkg">
+
+        <ImageButton android:id="@+id/about_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/about_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/events_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/about_button"
+            android:layout_toRightOf="@id/about_button"
+            android:src="@drawable/events_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/poster_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/about_button"
+            android:layout_toRightOf="@id/events_button"
+            android:src="@drawable/poster_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/newsletter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/about_button"
+            android:layout_toRightOf="@id/poster_button"
+            android:src="@drawable/newsletter_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/reviews_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/about_button"
+            android:layout_below="@id/about_button"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/reviews_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/photos_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/events_button"
+            android:layout_alignTop="@id/reviews_button"
+            android:src="@drawable/photos_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/video_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/poster_button"
+            android:layout_alignTop="@id/reviews_button"
+            android:src="@drawable/video_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/music_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/newsletter_button"
+            android:layout_alignTop="@id/reviews_button"
+            android:src="@drawable/music_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageView android:id="@+id/social_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/menu_social"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/amazon_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/about_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/amazon_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/youtube_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/amazon_button"
+            android:layout_toRightOf="@id/amazon_button"
+            android:src="@drawable/youtube_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/naxos_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/youtube_button"
+            android:layout_alignTop="@id/amazon_button"
+            android:src="@drawable/naxos_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/allmusic_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/amazon_button"
+            android:layout_toRightOf="@id/naxos_button"
+            android:src="@drawable/allmusic_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/facebook_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/amazon_button"
+            android:layout_above="@id/amazon_button"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/facebook_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/twitter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/youtube_button"
+            android:layout_alignTop="@id/facebook_button"
+            android:src="@drawable/twitter_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/albums_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/naxos_button"
+            android:layout_alignTop="@id/facebook_button"
+            android:src="@drawable/albums_button"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton android:id="@+id/blog_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/facebook_button"
+            android:layout_alignLeft="@id/allmusic_button"
+            android:src="@drawable/blog_button"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+    <ImageButton android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/settings_item_margin_top"
+        android:layout_marginRight="@dimen/settings_item_margin_right"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/settings_btn_normal"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton android:id="@+id/sponsors_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sponsors_item_margin_top"
+        android:layout_marginRight="@dimen/settings_item_margin_right"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/settings_button"
+        android:src="@drawable/sponsors_btn_normal"
+        android:background="@android:color/transparent"/>
+
+    <RelativeLayout
+        android:id="@+id/flags_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_button"
+        android:layout_alignRight="@id/settings_button"
+        android:background="@drawable/settings_bkg"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/flag_arm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flag_button_arm"/>
+
+        <ImageButton
+            android:id="@+id/flag_eng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/flag_arm"
+            android:layout_toRightOf="@id/flag_arm"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/flag_button_eng"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sponsors_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sponsors_button"
+        android:layout_alignRight="@id/sponsors_button"
+        android:background="@drawable/sponsors_img"
+        android:visibility="gone">
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/menu_logo"/>
+
+</RelativeLayout>

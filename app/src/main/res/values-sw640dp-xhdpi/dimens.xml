@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navbar_back_left_margin">8dp</dimen>
+    <dimen name="navbar_button_right_margin">10dp</dimen>
+    <dimen name="navbar_back_top_margin">3dp</dimen>
+    <dimen name="navbar_main_title_right_margin">15dp</dimen>
+    <dimen name="navbar_main_title_font_size">28sp</dimen>
+    <dimen name="navbar_sub_title_area_size">36dp</dimen>
+    <dimen name="navbar_sub_title_margin_top">11dp</dimen>
+    <dimen name="navbar_sub_title_margin_horizontal">50dp</dimen>
+    <dimen name="navbar_sub_title_font_size">21sp</dimen>
+
+    <dimen name="static_text_size">21sp</dimen>
+
+</resources>

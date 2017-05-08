@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filter_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:background="@color/apo_gray"
+    android:visibility="gone">
+
+    <ImageButton
+        android:id="@+id/filter_cd_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/filter_button_margin"
+        android:src="@drawable/filter_cd_button"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:id="@+id/filter_concert_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/filter_button_margin"
+        android:src="@drawable/filter_concert_button"
+        android:background="@android:color/transparent"/>
+</RelativeLayout>

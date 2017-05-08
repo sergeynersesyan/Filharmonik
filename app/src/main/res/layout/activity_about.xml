@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_screen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apo_bkg"
+    tools:context="am.apo.filharmonik.AboutActivity">
+
+    <include
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/apo_action_bar" />
+
+    <include
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/apo_bottom_bar" />
+
+    <LinearLayout
+        android:id="@+id/about_menu"
+        android:layout_height="@dimen/about_menu_height"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@id/bottom_bar"
+        android:background="@drawable/about_menu_bkg">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/about_history_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/history_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/about_orchestra_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/orchestra_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/about_management_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/management_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/about_contact_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/contact_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/history_contact_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/about_menu"
+        layout="@layout/apo_web_view" />
+
+</RelativeLayout>

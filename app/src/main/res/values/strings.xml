@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Filharmonik</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="pref_curr_lang" translatable="false">curr_language</string>
+    <string name="pref_lang_arm" translatable="false">arm</string>
+    <string name="pref_lang_eng" translatable="false">eng</string>
+    <string name="pref_past_new_year" translatable="false">2000-01-01 00:00:00</string>
+    <string name="last_check_date_time" translatable="false">last_check_date_time</string>
+    <string name="last_check_response" translatable="false">last_check_response</string>
+    <string name="favorites_mode_video" translatable="false">favorites_mode_video</string>
+    <string name="favorites_mode_music" translatable="false">favorites_mode_music</string>
+    <string name="favorites_array_video" translatable="false">favorites_array_video</string>
+    <string name="favorites_array_music" translatable="false">favorites_array_music</string>
+    <string name="review_cd_mode" translatable="false">review_cd_mode</string>
+    <string name="link_url" translatable="false">link_url</string>
+    <string name="link_title" translatable="false">link_title</string>
+    <string name="label_search_hint">search</string>
+    <string name="ADD_TO_GALLERY">Add to gallery</string>
+
+</resources>

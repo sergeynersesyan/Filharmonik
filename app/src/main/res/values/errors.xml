@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PUSH_NOT_SUPPORTED">This device does not support push notifications</string>
+    <string name="APO_NETWORK_ERROR">Network Error</string>
+    <string name="PLAYER_EROR">Playback error, please try later...</string>
+</resources>

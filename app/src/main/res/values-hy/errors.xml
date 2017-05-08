@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PUSH_NOT_SUPPORTED">Տվյալ սարքը չի ապահովում հաղորդագրությունների ստացում</string>
+    <string name="APO_NETWORK_ERROR">Ցանցի խափանում</string>
+    <string name="PLAYER_EROR">Հոլովակի բեռնավորման սխալ, խնդրեմ փորձեք ավելի ուշ...</string>
+
+</resources>

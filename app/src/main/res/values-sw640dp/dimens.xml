@@ -1,0 +1,43 @@
+<resources>
+    <dimen name="start_button_margin_top">80dp</dimen>
+
+    <dimen name="settings_item_margin_right">30dp</dimen>
+    <dimen name="settings_item_margin_top">50dp</dimen>
+    <dimen name="sponsors_item_margin_top">80dp</dimen>
+
+    <dimen name="filter_button_margin">10dp</dimen>
+
+    <dimen name="about_menu_width">130dp</dimen>
+    <dimen name="orchestra_menu_width">140dp</dimen>
+    <dimen name="management_menu_width">150dp</dimen>
+
+    <dimen name="about_menu_item_height">150dp</dimen>
+    <dimen name="management_menu_item_height">150dp</dimen>
+    <dimen name="orchestra_menu_item_height">118dp</dimen>
+
+    <dimen name="management_arrow_margin">30dp</dimen>
+    <dimen name="management_arrow_width">50dp</dimen>
+
+    <dimen name="apo_list_width">400dp</dimen>
+    <dimen name="event_image_height">316dp</dimen>
+    <dimen name="poster_image_width">500dp</dimen>
+    <dimen name="player_area_height">336dp</dimen>
+
+    <dimen name="dynamic_thumb_width">240dp</dimen>
+    <dimen name="dynamic_thumb_height">180dp</dimen>
+    <dimen name="dynamic_thumb_inter">20dp</dimen>
+    <dimen name="dynamic_thumb_grid_margin">10dp</dimen>
+
+    <dimen name="navbar_back_left_margin">8dp</dimen>
+    <dimen name="navbar_button_right_margin">2dp</dimen>
+    <dimen name="navbar_back_top_margin">3dp</dimen>
+    <dimen name="navbar_main_title_right_margin">10dp</dimen>
+    <dimen name="navbar_main_title_font_size">23sp</dimen>
+    <dimen name="navbar_sub_title_area_size">36dp</dimen>
+    <dimen name="navbar_sub_title_margin_top">10dp</dimen>
+    <dimen name="navbar_sub_title_margin_horizontal">50dp</dimen>
+    <dimen name="navbar_sub_title_font_size">17sp</dimen>
+
+    <dimen name="static_text_size">18sp</dimen>
+
+</resources>

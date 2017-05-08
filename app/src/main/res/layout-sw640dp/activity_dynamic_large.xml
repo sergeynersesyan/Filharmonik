@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_screen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apo_bkg"
+    tools:context="am.apo.filharmonik.DynamicLargeActivity">
+
+    <include
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/apo_action_bar" />
+
+    <include
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/apo_bottom_bar" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/action_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_bar"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"/>
+
+    <include
+        android:id="@+id/dynamic_image"
+        android:layout_width="@dimen/poster_image_width"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_bar"
+        android:layout_alignParentLeft="true"
+        layout="@layout/apo_image_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/action_container"
+        android:layout_toRightOf="@id/dynamic_image"
+        android:layout_margin="20dp"
+        android:scrollbars="none">
+        <TextView
+            android:id="@+id/dynamic_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/static_text_size"
+            android:lineSpacingMultiplier="1.3"/>
+    </ScrollView>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/apo_list_container"
+        android:layout_width="@dimen/apo_list_width"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_bar"
+        android:layout_below="@id/top_bar"/>
+
+</RelativeLayout>

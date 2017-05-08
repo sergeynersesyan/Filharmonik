@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="TITLE_HISTORY">ՊԱՏՄՈՒԹՅՈՒՆ</string>
+    <string name="TITLE_ORCHESTRA">ՆՎԱԳԱԽՈՒՄԲ</string>
+    <string name="TITLE_MANAGEMENT">ԱՇԽԱՏԱԿԱԶՄ</string>
+    <string name="TITLE_CONTACT">ԿԱՊ</string>
+    <string name="TITLE_EVENTS">ՄԻՋՈՑԱՌՈՒՄՆԵՐ</string>
+    <string name="TITLE_POSTER">ԱՖԻՇԱ</string>
+    <string name="TITLE_NEWSLETTER">ԼՐԱՏՈՒ</string>
+    <string name="TITLE_REVIEWS">ԱԿՆԱՐԿՆԵՐ</string>
+    <string name="TITLE_PHOTOS">ՆԿԱՐՆԵՐ</string>
+    <string name="TITLE_VIDEO">ՏԵՍԱՀՈԼՈՎԱԿ</string>
+    <string name="TITLE_MUSIC">ԵՐԱԺՇՏՈՒԹՅՈՒՆ</string>
+
+    <string name="TITLE_FACEBOOK">FACEBOOK</string>
+    <string name="TITLE_TWITTER">TWITTER</string>
+    <string name="TITLE_ALBUMS">ALBUMS</string>
+    <string name="TITLE_BLOG">BLOG</string>
+    <string name="TITLE_AMAZON">AMAZON</string>
+    <string name="TITLE_YOUTUBE">YOUTUBE</string>
+    <string name="TITLE_NAXOS">NAXOS</string>
+    <string name="TITLE_ALLMUSIC">ALLMUSIC</string>
+
+    <string name="SUB_TITLE_ANPO">Հայաստանի Ազգային Ֆիլհարմոնիկ Նվագախումբ</string>
+    <string name="SUB_TITLE_MAESTRO">Մաեստրո</string>
+    <string name="SUB_TITLE_MUSICIANS">Նվագախմբի Երաժիշտներ</string>
+    <string name="SUB_TITLE_POST_MAESTROS">Նախկին Գեղարվեստական Ղեկավարներ</string>
+    <string name="SUB_TITLE_GUESTS">Հրավիրյալ Մենակատարներ</string>
+    <string name="SUB_TITLE_LOCALS">Հայ Մենակատարներ</string>
+    <string name="SUB_TITLE_SOCIAL">ANPO sharing</string>
+
+    <string name="SUB_TITLE_STRUCTURE">Կառուցվածք</string>
+    <string name="SUB_TITLE_RUZAN">Գլխավոր տնօրեն</string>
+    <string name="SUB_TITLE_ARMAN">Գլխավոր պրոդյուսեր, փոխտնօրեն</string>
+    <string name="SUB_TITLE_DAVIT">Նվագախմբի տնօրեն, փոխտնօրեն</string>
+
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ORCHESTRA_URL_1">http://apo.am/hy/%D5%B6%D5%BE%D5%A1%D5%A3%D5%A1%D5%AD%D5%B4%D5%A2%D5%AB-%D5%AF%D5%A1%D5%A6%D5%B4%D5%A8?wptheme=apothemeR</string>
+    <string name="ORCHESTRA_URL_2">http://apo.am/hy/%D5%A3%D5%A5%D5%B2%D5%A1%D6%80%D5%BE%D5%A5%D5%BD%D5%BF%D5%A1%D5%AF%D5%A1%D5%B6-%D5%B2%D5%A5%D5%AF%D5%A1%D5%BE%D5%A1%D6%80%D5%B6%D5%A5%D6%80?wptheme=apothemeR</string>
+    <string name="ORCHESTRA_URL_3">http://apo.am/hy/%D5%B0%D6%80%D5%A1%D5%BE%D5%AB%D6%80%D5%B5%D5%A1%D5%AC-%D5%B4%D5%A5%D5%B6%D5%A1%D5%AF%D5%A1%D5%BF%D5%A1%D6%80%D5%B6%D5%A5%D6%80?wptheme=apothemeR</string>
+    <string name="ORCHESTRA_URL_4">http://apo.am/hy/%D5%B0%D5%A1%D5%B5-%D5%A5%D6%80%D5%A1%D5%AA%D5%AB%D5%B7%D5%BF%D5%B6%D5%A5%D6%80?wptheme=apothemeR</string>
+
+    <string name="FACEBOOK_URL">https://www.facebook.com/armphilharmonic?ref=hl</string>
+    <string name="TWITTER_URL">https://mobile.twitter.com/ArmPhilharmonic</string>
+    <string name="ALBUMS_URL"> http://apo.am/hy/%D5%B1%D5%A1%D5%B5%D5%B6%D5%A1%D5%BD%D5%AF%D5%A1%D5%BE%D5%A1%D5%BC%D5%A1%D5%AF%D5%B6%D5%A5%D6%80</string>
+    <string name="BLOG_URL">http://apo.am/blog</string>
+    <string name="AMAZON_URL">http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=Topchjan+&amp;x=0&amp;y=0</string>
+    <string name="YOUTUBE_URL">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg</string>
+    <string name="NAXOS_URL">http://www.naxos.com/search/kwsresults.asp?q=Armenian+Philharmonic+Orchestra&amp;site=naxosalbums&amp;x=21&amp;y=8&amp;ie=ISO-8859-15&amp;output=xml_no_dtd&amp;proxystylesheet=naxos_frontend&amp;client=naxos_frontend&amp;filter=0</string>
+    <string name="ALLMUSIC_URL">http://www.allmusic.com/artist/armenian-philharmonic-orchestra-mn0001936802/credits</string>
+
+    <string name="FACEBOOK_APP_URI">fb://profile/196825040341665</string>
+    <string name="TWITTER_APP_URI">twitter://user?screen_name=ArmPhilharmonic</string>
+    <string name="ALBUMS_APP_URI"></string>
+    <string name="BLOG_APP_URI"></string>
+    <string name="AMAZON_APP_URI"></string>
+    <string name="YOUTUBE_APP_URI">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg</string>
+    <string name="NAXOS_APP_URI"></string>
+    <string name="ALLMUSIC_APP_URI"></string>
+
+</resources>

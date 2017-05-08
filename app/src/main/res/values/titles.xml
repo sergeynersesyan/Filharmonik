@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="TITLE_HISTORY">HISTORY</string>
+    <string name="TITLE_ORCHESTRA">ORCHESTRA</string>
+    <string name="TITLE_MANAGEMENT">MANAGEMENT</string>
+    <string name="TITLE_CONTACT">CONTACT</string>
+    <string name="TITLE_EVENTS">EVENTS</string>
+    <string name="TITLE_POSTER">POSTER</string>
+    <string name="TITLE_NEWSLETTER">NEWSLETTER</string>
+    <string name="TITLE_REVIEWS">REVIEWS</string>
+    <string name="TITLE_PHOTOS">PHOTOS</string>
+    <string name="TITLE_VIDEO">VIDEO</string>
+    <string name="TITLE_MUSIC">MUSIC</string>
+
+    <string name="TITLE_FACEBOOK">FACEBOOK</string>
+    <string name="TITLE_TWITTER">TWITTER</string>
+    <string name="TITLE_ALBUMS">ALBUMS</string>
+    <string name="TITLE_BLOG">BLOG</string>
+    <string name="TITLE_AMAZON">AMAZON</string>
+    <string name="TITLE_YOUTUBE">YOUTUBE</string>
+    <string name="TITLE_NAXOS">NAXOS</string>
+    <string name="TITLE_ALLMUSIC">ALLMUSIC</string>
+
+    <string name="SUB_TITLE_ANPO">Armenian National Philharmonic Orchestra</string>
+    <string name="SUB_TITLE_MAESTRO">Maestro</string>
+    <string name="SUB_TITLE_MUSICIANS">Orchestra Musicians</string>
+    <string name="SUB_TITLE_POST_MAESTROS">Past Artistic Directors</string>
+    <string name="SUB_TITLE_GUESTS">Guest Artists</string>
+    <string name="SUB_TITLE_LOCALS">Armenian Soloists</string>
+    <string name="SUB_TITLE_SOCIAL">ANPO sharing</string>
+
+    <string name="SUB_TITLE_STRUCTURE">Structure</string>
+    <string name="SUB_TITLE_RUZAN">General Director</string>
+    <string name="SUB_TITLE_ARMAN">General Producer, Deputy Director</string>
+    <string name="SUB_TITLE_DAVIT">Orchestra Director, Deputy Director</string>
+
+</resources>

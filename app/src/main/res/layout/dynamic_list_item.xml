@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dynamic_bkg">
+
+    <RelativeLayout
+        android:id="@+id/date_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="3dp"
+        android:padding="2dp"
+        android:background="@drawable/dynamic_item_bkg" >
+
+        <TextView
+            android:id="@+id/date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:lines="2"
+            android:text="12.00\n2014"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dynamic_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/date_area"
+        android:gravity="center"
+        android:maxLines="3"
+        android:lines="3" />
+</RelativeLayout>

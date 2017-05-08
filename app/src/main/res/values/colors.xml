@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="apo_yellow">#FFFFB45F</color>
+    <color name="apo_bordo">#FF660C0A</color>
+    <color name="apo_dark">#F21A1A1A</color>
+    <color name="apo_gray">#FF555555</color>
+
+</resources>

@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_screen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apo_bkg"
+    tools:context="am.apo.filharmonik.ManagementActivity">
+
+    <include
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/apo_action_bar" />
+
+    <include
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/apo_bottom_bar" />
+
+    <LinearLayout
+        android:id="@+id/management_menu"
+        android:layout_height="@dimen/management_menu_height"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@id/bottom_bar"
+        android:background="@drawable/orchestra_menu_bkg">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/management_structure_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/structure_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/management_1_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/manager_1"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/management_2_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/manager_2"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/management_3_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/manager_3"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/static_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:addStatesFromChildren="true"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/management_menu"
+        layout="@layout/static_flipper_layout" />
+
+</RelativeLayout>

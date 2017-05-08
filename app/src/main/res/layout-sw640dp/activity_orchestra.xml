@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/full_screen_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apo_bkg"
+    tools:context="am.apo.filharmonik.OrchestraActivity">
+
+    <include
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/apo_action_bar" />
+
+    <include
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/apo_bottom_bar" />
+
+    <LinearLayout
+        android:id="@+id/orchestra_menu"
+        android:layout_height="match_parent"
+        android:layout_width="@dimen/orchestra_menu_width"
+        android:orientation="vertical"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_bar"
+        android:background="@drawable/orchestra_menu_bkg">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/maestro_button"
+            android:layout_height="@dimen/orchestra_menu_item_height"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/maestro_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/musicians_button"
+            android:layout_height="@dimen/orchestra_menu_item_height"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/musicians_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/post_maestro_button"
+            android:layout_height="@dimen/orchestra_menu_item_height"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/post_maestro_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/guests_button"
+            android:layout_height="@dimen/orchestra_menu_item_height"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/guests_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/locals_button"
+            android:layout_height="@dimen/orchestra_menu_item_height"
+            android:layout_width="wrap_content"
+            style="@style/StaticMenuButton"
+            android:src="@drawable/locals_button"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_bar"
+        android:layout_toRightOf="@id/orchestra_menu"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/static_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:addStatesFromChildren="true"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@id/bottom_bar"
+        android:layout_toRightOf="@id/orchestra_menu"
+        layout="@layout/static_flipper_layout" />
+
+</RelativeLayout>
