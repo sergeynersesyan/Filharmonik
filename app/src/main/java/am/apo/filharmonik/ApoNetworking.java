@@ -133,7 +133,7 @@ public class ApoNetworking {
                     SharedPreferences.Editor editor = mSectionPrefs.edit();
                     editor.putString(mApoContext.getString(R.string.last_check_date_time), sdf.format(new Date()));
                     editor.putString(mApoContext.getString(R.string.last_check_response), jsonStr);
-                    editor.commit();
+                    editor.apply();
                 }
                 catch(Exception e)
                 {
