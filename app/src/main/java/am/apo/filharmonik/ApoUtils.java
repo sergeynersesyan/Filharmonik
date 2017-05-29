@@ -37,7 +37,7 @@ public class ApoUtils {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mApoContext);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(mApoContext.getString(R.string.pref_curr_lang), currLang);
-        editor.commit();
+        editor.apply();
     }
 
     public String getLanguage()

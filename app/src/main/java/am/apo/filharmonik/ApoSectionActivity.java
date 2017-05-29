@@ -3,25 +3,24 @@ package am.apo.filharmonik;
 import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.LabeledIntent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.CalendarContract;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
@@ -29,25 +28,27 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
  * Created by henrikgardishyan on 11/8/14.
  */
-abstract public class ApoSectionActivity extends ApoFullScreenActivity implements SharedActionFragment.OnShareClickListener, EventActionFragment.OnShareClickListener, EventActionFragment.OnCalendarClickListener{
+abstract public class ApoSectionActivity extends ApoFullScreenActivity implements SharedActionFragment.OnShareClickListener, EventActionFragment.OnShareClickListener, EventActionFragment.OnCalendarClickListener {
 
     protected String mSectionID;
     protected ImageButton mBackButton;
     protected ImageButton mHomeButton;
+    protected ImageButton mSettingsButton;
     protected ImageButton mBrowserButton;
     protected ProgressBar mProgressBar;
 
     protected String mBrowserUrl;
     private ApoNetworking mNetworker;
 
-    private final int[] mTitles = { R.string.TITLE_EVENTS, R.string.TITLE_NEWSLETTER,
-                                    R.string.TITLE_REVIEWS, R.string.TITLE_POSTER,
-                                    R.string.TITLE_PHOTOS, R.string.TITLE_VIDEO, R.string.TITLE_MUSIC};
+    private final int[] mTitles = {R.string.TITLE_EVENTS, R.string.TITLE_NEWSLETTER,
+            R.string.TITLE_REVIEWS, R.string.TITLE_POSTER,
+            R.string.TITLE_PHOTOS, R.string.TITLE_VIDEO, R.string.TITLE_MUSIC};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         super.onPostCreate(savedInstanceState);
 
         int sectionID = Integer.parseInt(mSectionID) - ApoContract.APO_BASE;
-        if(sectionID >= 0 && sectionID < mTitles.length) {
+        if (sectionID >= 0 && sectionID < mTitles.length) {
             setMainTitle(getString(mTitles[sectionID]));
         }
 
@@ -70,6 +71,32 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
                 finish();
             }
         });
+        mSettingsButton = (ImageButton) findViewById(R.id.settings_button_top);
+        mSettingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RelativeLayout flagsPopup = (RelativeLayout) findViewById(R.id.flags_popup);
+                flagsPopup.setVisibility(View.VISIBLE);
+            }
+        });
+
+        ImageButton armButton = (ImageButton) findViewById(R.id.flag_arm);
+        armButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ApoUtils.sharedUtils(getApplicationContext()).setLanguage(getString(R.string.pref_lang_arm));
+                setLanguageConfig();
+            }
+        });
+        ImageButton engButton = (ImageButton) findViewById(R.id.flag_eng);
+        engButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ApoUtils.sharedUtils(getApplicationContext()).setLanguage(getString(R.string.pref_lang_eng));
+                setLanguageConfig();
+            }
+        });
+
 
         mHomeButton = (ImageButton) findViewById(R.id.navbar_home);
         mHomeButton.setOnClickListener(new View.OnClickListener() {
@@ -82,11 +109,12 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
             }
         });
 
+
         mBrowserButton = (ImageButton) findViewById(R.id.navbar_browser);
         mBrowserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(null != mBrowserUrl) {
+                if (null != mBrowserUrl) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mBrowserUrl));
                     startActivity(browserIntent);
                 }
@@ -96,10 +124,26 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         mProgressBar = (ProgressBar) findViewById(R.id.apo_progress_bar);
     }
 
-    public void loadSection()
-    {
+    private void setLanguageConfig() {
+        String currLang = ApoUtils.sharedUtils(this).getLanguage();
+        findViewById(R.id.flag_arm).setSelected(currLang.equals(getString(R.string.pref_lang_arm)));
+        findViewById(R.id.flag_eng).setSelected(currLang.equals(getString(R.string.pref_lang_eng)));
+
+        Locale mLocale = new Locale(currLang.equals(getString(R.string.pref_lang_arm)) ? "hy" : "en");
+        Locale.setDefault(mLocale);
+        Configuration config = new Configuration();
+        config.locale = mLocale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        onLanguageChange();
+    }
+
+    protected void onLanguageChange() {
+        recreate();
+    }
+
+    public void loadSection() {
         Log.e(TAG, "Loading section with resolution: " + getString(R.string.device_res_id));
-        mNetworker = new ApoNetworking(this, mSectionID, getString(R.string.device_res_id)){
+        mNetworker = new ApoNetworking(this, mSectionID, getString(R.string.device_res_id)) {
 
             @Override
             void onOK(JSONObject obj) {
@@ -117,8 +161,8 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
                     if (null != lastSaved) {
                         onSectionReady(lastSaved);
                     }
+                } catch (Exception e) {
                 }
-                catch(Exception e) {}
             }
         };
 
@@ -126,36 +170,37 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         mNetworker.requestSection();
     }
 
-    public void onSectionReady(JSONObject obj)
-    {
+    public void onSectionReady(JSONObject obj) {
     }
 
-    public void setSectionID(String sectionID)
-    {
+    public void setSectionID(String sectionID) {
         mSectionID = sectionID;
     }
 
-    public String getSectionID()
-    {
+    public String getSectionID() {
         return mSectionID;
     }
 
-    public void setMainTitle(String title)
-    {
-        TextView subTitleView = (TextView)findViewById(R.id.main_title);
+    public void setMainTitle(String title) {
+        TextView subTitleView = (TextView) findViewById(R.id.main_title);
         subTitleView.setText(title);
     }
 
-    public void setSubTitle(String subTitle)
-    {
-        TextView subTitleView = (TextView)findViewById(R.id.sub_title);
+    public void setSubTitle(String subTitle) {
+        TextView subTitleView = (TextView) findViewById(R.id.sub_title);
         subTitleView.setText(subTitle);
     }
 
     @Override
     public void onShareClicked() {
         String shareText = onRequestShareText();
-        if(null != shareText) {
+        String imageURL = null;
+        try {
+            imageURL = onRequestCalendarObject().getString(ApoContract.APO_JSON_PICTURE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (null != shareText) {
 
             Intent emailIntent = new Intent();
             emailIntent.setAction(Intent.ACTION_SEND);
@@ -176,7 +221,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
                 // Extract the label, append it, and repackage it in a LabeledIntent
                 ResolveInfo ri = resInfo.get(i);
                 String packageName = ri.activityInfo.packageName;
-                if(packageName.contains("android.email")) {
+                if (packageName.contains("android.email")) {
                     emailIntent.setPackage(packageName);
                 } else /*if(packageName.contains("twitter") || packageName.contains("facebook") || packageName.contains("mms"))*/ {
                     Intent intent = new Intent();
@@ -200,7 +245,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
             }
 
             // convert intentList to array
-            LabeledIntent[] extraIntents = intentList.toArray( new LabeledIntent[ intentList.size() ]);
+            LabeledIntent[] extraIntents = intentList.toArray(new LabeledIntent[intentList.size()]);
 
             openInChooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents);
             startActivity(openInChooser);
@@ -213,7 +258,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
     public void onCalendarClicked() {
 
         JSONObject obj = onRequestCalendarObject();
-        if(null != obj) {
+        if (null != obj) {
             try {
                 String dateStr = obj.getString(ApoContract.APO_JSON_DATE);
                 SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -243,27 +288,24 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         }
     }
 
-    protected int getGridColumns()
-    {
+    protected int getGridColumns() {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
-        int screenWidth = metrics.widthPixels - 2*(int)getResources().getDimension(R.dimen.dynamic_thumb_grid_margin);
-        int itemWidth = (int)getResources().getDimension(R.dimen.dynamic_thumb_width) + (int)getResources().getDimension(R.dimen.dynamic_thumb_inter);
-        int numColumns = screenWidth/itemWidth;
+        int screenWidth = metrics.widthPixels - 2 * (int) getResources().getDimension(R.dimen.dynamic_thumb_grid_margin);
+        int itemWidth = (int) getResources().getDimension(R.dimen.dynamic_thumb_width) + (int) getResources().getDimension(R.dimen.dynamic_thumb_inter);
+        int numColumns = screenWidth / itemWidth;
 
         Log.e(TAG, "Screen width: " + screenWidth + ", itemWidth: " + itemWidth + ", numColumns: " + numColumns);
 
         return numColumns;
     }
 
-    protected String onRequestShareText()
-    {
+    protected String onRequestShareText() {
         return null;
     }
 
-    protected JSONObject onRequestCalendarObject()
-    {
+    protected JSONObject onRequestCalendarObject() {
         return null;
     }
 }
