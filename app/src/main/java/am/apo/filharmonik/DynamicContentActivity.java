@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class DynamicContentActivity extends ApoSectionActivity implements SharedActionFragment.OnInfoClickListener{
+public class DynamicContentActivity extends ApoSectionActivity implements SharedActionFragment.OnInfoClickListener {
 
     private DynamicContentFlipper mFlipper;
     SharedActionFragment mActionFragment;
@@ -50,26 +51,54 @@ public class DynamicContentActivity extends ApoSectionActivity implements Shared
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        try{
+        try {
             mJSONObject = new JSONObject(getIntent().getStringExtra(ApoContract.APO_JSON));
-            setSubTitle(mJSONObject.getString(ApoContract.APO_JSON_TITLE));
-            mFlipper.setCardInfo(mJSONObject.getString(ApoContract.APO_JSON_PICTURE),
-                    mJSONObject.getString(ApoContract.APO_JSON_DESCRIPTION));
+            setData(mJSONObject);
+        } catch (Exception e) {
         }
-        catch (Exception e){}
     }
 
     @Override
     protected String onRequestShareText() {
         try {
             return mJSONObject.getString(ApoContract.APO_JSON_SOCIAL);
+        } catch (Exception e) {
         }
-        catch (Exception e){}
         return null;
+    }
+
+    @Override
+    protected void onLanguageChange() {
+        loadSection();
     }
 
     @Override
     public void onInfoClicked() {
         mFlipper.flip();
+    }
+
+    @Override
+    public void onSectionReady(JSONObject obj) {
+        super.onSectionReady(obj);
+        try {
+            JSONArray jsonData = obj.getJSONArray("data");
+            for (int i = 0; i < jsonData.length(); i++) {
+                if (jsonData.getJSONObject(i).getInt("id") == mJSONObject.getInt("id")) {
+                    mJSONObject = jsonData.getJSONObject(i);
+                    setData(mJSONObject);
+                    break;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setData(JSONObject jsonData) throws JSONException {
+        setSubTitle(jsonData.getString(ApoContract.APO_JSON_TITLE));
+        mFlipper.setCardInfo(jsonData.getString(ApoContract.APO_JSON_PICTURE),
+                jsonData.getString(ApoContract.APO_JSON_DESCRIPTION));
+
+
     }
 }

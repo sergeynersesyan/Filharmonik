@@ -147,6 +147,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
 
             @Override
             void onOK(JSONObject obj) {
+                if (mProgressBar != null)
                 mProgressBar.setVisibility(View.GONE);
                 onSectionReady(obj);
             }
@@ -166,7 +167,9 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
             }
         };
 
-        mProgressBar.setVisibility(View.VISIBLE);
+        if (mProgressBar != null) {
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
         mNetworker.requestSection();
     }
 
