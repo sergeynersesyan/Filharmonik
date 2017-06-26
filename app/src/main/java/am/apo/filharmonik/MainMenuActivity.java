@@ -304,4 +304,10 @@ public class MainMenuActivity extends ApoFullScreenActivity {
 
         return false;
     }
+
+    @Override
+    protected void onLanguageChange() {
+        super.onLanguageChange();
+        fillMenu();
+    }
 }

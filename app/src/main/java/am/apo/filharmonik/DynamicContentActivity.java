@@ -1,30 +1,11 @@
 package am.apo.filharmonik;
 
-import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.LabeledIntent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.provider.CalendarContract;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 public class DynamicContentActivity extends ApoSectionActivity implements SharedActionFragment.OnInfoClickListener {
 
@@ -70,6 +51,7 @@ public class DynamicContentActivity extends ApoSectionActivity implements Shared
     @Override
     protected void onLanguageChange() {
         loadSection();
+        changePreviousActivityLanguage();
     }
 
     @Override

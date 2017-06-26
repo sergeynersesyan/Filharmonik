@@ -1,22 +1,11 @@
 package am.apo.filharmonik;
 
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
-import android.provider.CalendarContract;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
 
 
 public class EventContentActivity extends ApoSectionActivity implements EventActionFragment.OnCalendarClickListener {
@@ -33,7 +22,6 @@ public class EventContentActivity extends ApoSectionActivity implements EventAct
         setSectionID(ApoContract.APO_EVENT);
         try{
             mJSONObject = new JSONObject(getIntent().getStringExtra(ApoContract.APO_JSON));
-            setSubTitle(mJSONObject.getString(ApoContract.APO_JSON_TITLE));
 
             mActionFragment = new EventActionFragment();
 
@@ -45,8 +33,7 @@ public class EventContentActivity extends ApoSectionActivity implements EventAct
             mImageView = new ApoImageView(this);
             mTextView = (TextView)findViewById(R.id.event_text);
 
-            mImageView.loadUrl(mJSONObject.getString(ApoContract.APO_JSON_PICTURE));
-            mTextView.setText(mJSONObject.getString(ApoContract.APO_JSON_DESCRIPTION));
+            setData(mJSONObject);
         }
         catch (JSONException e){}
     }
@@ -64,4 +51,34 @@ public class EventContentActivity extends ApoSectionActivity implements EventAct
     protected JSONObject onRequestCalendarObject() {
         return mJSONObject;
     }
+
+    @Override
+    protected void onLanguageChange() {
+        loadSection();
+        changePreviousActivityLanguage();
+    }
+
+    @Override
+    public void onSectionReady(JSONObject obj) {
+        super.onSectionReady(obj);
+        try {
+            JSONArray jsonData = obj.getJSONArray("data");
+            for (int i = 0; i < jsonData.length(); i++) {
+                if (jsonData.getJSONObject(i).getInt("id") == mJSONObject.getInt("id")) {
+                    mJSONObject = jsonData.getJSONObject(i);
+                    setData(mJSONObject);
+                    break;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setData (JSONObject obj) throws JSONException {
+        setSubTitle(obj.getString(ApoContract.APO_JSON_TITLE));
+        mImageView.loadUrl(obj.getString(ApoContract.APO_JSON_PICTURE));
+        mTextView.setText(obj.getString(ApoContract.APO_JSON_DESCRIPTION));
+    }
+
 }

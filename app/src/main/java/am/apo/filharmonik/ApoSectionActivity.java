@@ -124,6 +124,11 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         mProgressBar = (ProgressBar) findViewById(R.id.apo_progress_bar);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
     private void setLanguageConfig() {
         String currLang = ApoUtils.sharedUtils(this).getLanguage();
         findViewById(R.id.flag_arm).setSelected(currLang.equals(getString(R.string.pref_lang_arm)));
@@ -137,9 +142,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
         onLanguageChange();
     }
 
-    protected void onLanguageChange() {
-        recreate();
-    }
+
 
     public void loadSection() {
         Log.e(TAG, "Loading section with resolution: " + getString(R.string.device_res_id));
@@ -310,6 +313,12 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
 
     protected JSONObject onRequestCalendarObject() {
         return null;
+    }
+
+    @Override
+    protected void onLanguageChange() {
+        super.onLanguageChange();
+        changePreviousActivityLanguage();
     }
 }
 

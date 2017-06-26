@@ -3,11 +3,9 @@ package am.apo.filharmonik;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,9 +13,7 @@ import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
 import am.apo.filharmonik.util.SystemUiHider;
 
@@ -31,11 +27,30 @@ public class ApoFullScreenActivity extends Activity {
 
     protected SystemUiHider mSystemUiHider;
     private View mContentView;
+    protected static int activityCount;
+    protected int activityIndex;
+    protected static int invalidatePreviousActivityIndex = 0;
+
+    public void changePreviousActivityLanguage() {
+        invalidatePreviousActivityIndex = activityIndex;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(getResources().getBoolean(R.bool.device_is_phone) ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        activityIndex = ++activityCount;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (activityIndex < invalidatePreviousActivityIndex) {
+//            recreate();
+            invalidatePreviousActivityIndex = 0;
+            onLanguageChange();
+        }
+
     }
 
     @Override
@@ -118,6 +133,10 @@ public class ApoFullScreenActivity extends Activity {
                 .build();
 
         ImageLoader.getInstance().init(config);
+    }
+
+    protected void onLanguageChange() {
+        recreate();
     }
 }
 
