@@ -81,4 +81,6 @@ public class EventContentActivity extends ApoSectionActivity implements EventAct
         mTextView.setText(obj.getString(ApoContract.APO_JSON_DESCRIPTION));
     }
 
+
+
 }

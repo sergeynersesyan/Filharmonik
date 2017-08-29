@@ -26,6 +26,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
     private final int YOUTUBE_LINK_INDEX = 5;
     private final int NAXOS_LINK_INDEX = 6;
     private final int ALLMUSIC_LINK_INDEX = 7;
+    private final int STREAM_LINK_INDEX = 8;
 
     private Locale mLocale;
 
@@ -94,6 +95,19 @@ public class MainMenuActivity extends ApoFullScreenActivity {
             }
         });
 
+        ImageButton ticketsButton = (ImageButton) findViewById(R.id.tickets_button);
+        ticketsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(getApplicationContext(), BrowserActivity.class);
+                browserIntent.putExtra(getString(R.string.link_url), "https://www.tomsarkgh.am/hy/event/26413/Joint-Concert-of-the-Jenaer-Ph.html");
+                browserIntent.putExtra(getString(R.string.link_title), "Tickets");
+                startActivity(browserIntent);
+            }
+        });
+
+
+
         fillMenu();
     }
 
@@ -145,7 +159,8 @@ public class MainMenuActivity extends ApoFullScreenActivity {
                 new LinkInfo(null, R.string.AMAZON_APP_URI, R.string.AMAZON_URL),
                 new LinkInfo("com.google.android.youtube", R.string.YOUTUBE_APP_URI, R.string.YOUTUBE_URL),
                 new LinkInfo(null, R.string.NAXOS_APP_URI, R.string.NAXOS_URL),
-                new LinkInfo(null, R.string.ALLMUSIC_APP_URI, R.string.ALLMUSIC_URL)
+                new LinkInfo(null, R.string.ALLMUSIC_APP_URI, R.string.ALLMUSIC_URL),
+                new LinkInfo("com.google.android.youtube", R.string.ALLMUSIC_APP_URI, R.string.LIVE_STREAM_URL),
         };
 
         ImageButton aboutButton = (ImageButton) findViewById(R.id.about_button);
@@ -232,6 +247,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         setLinkHandler(R.id.youtube_button, YOUTUBE_LINK_INDEX, getString(R.string.TITLE_YOUTUBE));
         setLinkHandler(R.id.naxos_button, NAXOS_LINK_INDEX, getString(R.string.TITLE_NAXOS));
         setLinkHandler(R.id.allmusic_button, ALLMUSIC_LINK_INDEX, getString(R.string.TITLE_ALLMUSIC));
+        setLinkHandler(R.id.stream_button, STREAM_LINK_INDEX, "LIVE NOW");
     }
 
     private void setLinkHandler(int buttonID, final int index, final String title)
@@ -247,6 +263,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
 
     private void openLink(int index, String title)
     {
+
         try {
             if (isAppInstalled(mLinkInfoArr[index].mPackageName)) {
                 try {

@@ -13,6 +13,8 @@
     <string name="YOUTUBE_URL">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg</string>
     <string name="NAXOS_URL">http://www.naxos.com/search/kwsresults.asp?q=Armenian+Philharmonic+Orchestra&amp;site=naxosalbums&amp;x=21&amp;y=8&amp;ie=ISO-8859-15&amp;output=xml_no_dtd&amp;proxystylesheet=naxos_frontend&amp;client=naxos_frontend&amp;filter=0</string>
     <string name="ALLMUSIC_URL">http://www.allmusic.com/artist/armenian-philharmonic-orchestra-mn0001936802/credits</string>
+    <string name="LIVE_STREAM_URL">https://www.youtube.com/watch?v=RtU_mdL2vBM</string>
+
 
     <string name="FACEBOOK_APP_URI">fb://profile/196825040341665</string>
     <string name="TWITTER_APP_URI">twitter://user?screen_name=ArmPhilharmonic</string>
