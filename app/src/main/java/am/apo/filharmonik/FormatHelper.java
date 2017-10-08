@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  * Created by Mr Nersesyan on 29/08/2017.
  */
 
-public class FormatParser {
+public class FormatHelper {
 
 
     public static CharSequence parse(CharSequence input) {

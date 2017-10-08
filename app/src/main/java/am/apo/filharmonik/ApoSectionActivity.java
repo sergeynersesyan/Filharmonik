@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.provider.CalendarContract;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -71,12 +72,12 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
                 finish();
             }
         });
+        final RelativeLayout flagsPopup = (RelativeLayout) findViewById(R.id.flags_popup);
         mSettingsButton = (ImageButton) findViewById(R.id.settings_button_top);
         mSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RelativeLayout flagsPopup = (RelativeLayout) findViewById(R.id.flags_popup);
-                flagsPopup.setVisibility(View.VISIBLE);
+                flagsPopup.setVisibility(flagsPopup.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             }
         });
 
@@ -86,6 +87,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
             public void onClick(View view) {
                 ApoUtils.sharedUtils(getApplicationContext()).setLanguage(getString(R.string.pref_lang_arm));
                 setLanguageConfig();
+                flagsPopup.setVisibility(View.GONE);
             }
         });
         ImageButton engButton = (ImageButton) findViewById(R.id.flag_eng);
@@ -94,6 +96,7 @@ abstract public class ApoSectionActivity extends ApoFullScreenActivity implement
             public void onClick(View view) {
                 ApoUtils.sharedUtils(getApplicationContext()).setLanguage(getString(R.string.pref_lang_eng));
                 setLanguageConfig();
+                flagsPopup.setVisibility(View.GONE);
             }
         });
 

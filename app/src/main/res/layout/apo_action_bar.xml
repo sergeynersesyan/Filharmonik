@@ -34,6 +34,7 @@
         android:layout_marginRight="@dimen/navbar_button_right_margin"
         android:layout_toRightOf="@+id/navbar_home"
         android:background="@android:color/transparent"
+        android:scaleType="fitXY"
         android:src="@drawable/settings_button_navbar" />
 
     <ImageButton
@@ -51,30 +52,30 @@
         android:id="@+id/flags_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/settings_button_top"
-        android:layout_alignRight="@+id/settings_button_top"
-        android:background="@drawable/settings_bkg"
+        android:background="@drawable/navbar_settings_bkg"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/settings_button_top"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:elevation="4dp"
         android:visibility="gone">
 
         <ImageButton
             android:id="@+id/flag_arm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_alignParentLeft="true"
             android:background="@android:color/transparent"
-            android:src="@drawable/flag_button_arm"/>
+            android:src="@drawable/flag_button_arm"
+            />
 
         <ImageButton
             android:id="@+id/flag_eng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/flag_arm"
-            android:layout_toRightOf="@+id/flag_arm"
-            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/flag_arm"
+            android:layout_marginLeft="8dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/flag_button_eng"/>
+            android:src="@drawable/flag_button_eng" />
     </RelativeLayout>
 
     <TextView

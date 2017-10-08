@@ -90,7 +90,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
             @Override
             public void onClick(View view) {
 
-                RelativeLayout sponsorsPopup = (RelativeLayout) findViewById(R.id.sponsors_popup);
+                View sponsorsPopup = findViewById(R.id.sponsors_popup);
                 sponsorsPopup.setVisibility(View.VISIBLE);
             }
         });
@@ -128,7 +128,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
     @Override
     public boolean onContentClick() {
         RelativeLayout flagsPopup = (RelativeLayout) findViewById(R.id.flags_popup);
-        RelativeLayout sponsorsPopup = (RelativeLayout) findViewById(R.id.sponsors_popup);
+        View sponsorsPopup = findViewById(R.id.sponsors_popup);
         if(View.VISIBLE==flagsPopup.getVisibility() || View.VISIBLE==sponsorsPopup.getVisibility())
         {
             flagsPopup.setVisibility(View.GONE);
@@ -235,6 +235,21 @@ public class MainMenuActivity extends ApoFullScreenActivity {
                 openSection(ApoContract.APO_VIDEO);
             }
         });
+
+        ImageButton languageButton = (ImageButton) findViewById(R.id.settings_button);
+        languageButton.setImageDrawable(getResources().getDrawable(R.drawable.settings_button));
+
+        ImageButton sponsors = (ImageButton) findViewById(R.id.sponsors_button);
+        sponsors.setImageDrawable(getResources().getDrawable(R.drawable.sponsors_button));
+
+        ImageButton tickets = (ImageButton) findViewById(R.id.tickets_button);
+        tickets.setImageDrawable(getResources().getDrawable(R.drawable.buy_tickets_button));
+
+        ImageButton onlineStream = (ImageButton) findViewById(R.id.stream_button);
+        onlineStream.setImageDrawable(getResources().getDrawable(R.drawable.online_btn));
+
+        ImageView ministry = (ImageView) findViewById(R.id.logo_img);
+        ministry.setImageDrawable(getResources().getDrawable(R.drawable.ministry));
 
         ImageView socialLabel = (ImageView)findViewById(R.id.social_label);
         socialLabel.setImageDrawable(getResources().getDrawable(R.drawable.menu_social));
