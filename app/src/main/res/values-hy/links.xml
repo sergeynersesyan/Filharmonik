@@ -7,11 +7,11 @@
 
     <string name="FACEBOOK_URL">https://www.facebook.com/armphilharmonic?ref=hl</string>
     <string name="TWITTER_URL">https://mobile.twitter.com/ArmPhilharmonic</string>
-    <string name="ALBUMS_URL"> http://apo.am/hy/%D5%B1%D5%A1%D5%B5%D5%B6%D5%A1%D5%BD%D5%AF%D5%A1%D5%BE%D5%A1%D5%BC%D5%A1%D5%AF%D5%B6%D5%A5%D6%80</string>
+    <string name="INSTAGRAM_URL"> https://www.instagram.com/armenianfilharmonik/</string>
     <string name="BLOG_URL">http://apo.am/blog</string>
     <string name="AMAZON_URL">http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=Topchjan+&amp;x=0&amp;y=0</string>
     <string name="YOUTUBE_URL">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg</string>
-    <string name="NAXOS_URL">http://www.naxos.com/search/kwsresults.asp?q=Armenian+Philharmonic+Orchestra&amp;site=naxosalbums&amp;x=21&amp;y=8&amp;ie=ISO-8859-15&amp;output=xml_no_dtd&amp;proxystylesheet=naxos_frontend&amp;client=naxos_frontend&amp;filter=0</string>
+    <string name="CDBABY_URL">https://store.cdbaby.com/cd/edwardhosharian</string>
     <string name="ALLMUSIC_URL">http://www.allmusic.com/artist/armenian-philharmonic-orchestra-mn0001936802/credits</string>
 
     <string name="FACEBOOK_APP_URI">fb://profile/196825040341665</string>

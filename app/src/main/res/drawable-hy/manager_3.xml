@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@drawable/management_btn_3_selected_arm" />
-    <item android:state_selected="true" android:drawable="@drawable/management_btn_3_selected_arm" />
-    <item android:drawable="@drawable/management_btn_3_normal_arm" />
-</selector>

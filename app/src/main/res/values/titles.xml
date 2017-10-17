@@ -14,11 +14,11 @@
 
     <string name="TITLE_FACEBOOK">FACEBOOK</string>
     <string name="TITLE_TWITTER">TWITTER</string>
-    <string name="TITLE_ALBUMS">ALBUMS</string>
+    <string name="TITLE_INSTA">INSTAGRAM</string>
     <string name="TITLE_BLOG">BLOG</string>
     <string name="TITLE_AMAZON">AMAZON</string>
     <string name="TITLE_YOUTUBE">YOUTUBE</string>
-    <string name="TITLE_NAXOS">NAXOS</string>
+    <string name="TITLE_CDBABY">CDBABY</string>
     <string name="TITLE_ALLMUSIC">ALLMUSIC</string>
 
     <string name="SUB_TITLE_ANPO">Armenian National Philharmonic Orchestra</string>

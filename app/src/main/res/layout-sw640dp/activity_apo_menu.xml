@@ -117,7 +117,7 @@
             android:src="@drawable/youtube_button" />
 
         <ImageButton
-            android:id="@+id/naxos_button"
+            android:id="@+id/cdbaby_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/amazon_button"
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/amazon_button"
-            android:layout_toRightOf="@id/naxos_button"
+            android:layout_toRightOf="@id/cdbaby_button"
             android:background="@android:color/transparent"
             android:src="@drawable/allmusic_button" />
 
@@ -154,10 +154,10 @@
             android:src="@drawable/twitter_button" />
 
         <ImageButton
-            android:id="@+id/albums_button"
+            android:id="@+id/instagram_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/naxos_button"
+            android:layout_alignLeft="@id/cdbaby_button"
             android:layout_alignTop="@id/facebook_button"
             android:background="@android:color/transparent"
             android:src="@drawable/albums_button" />

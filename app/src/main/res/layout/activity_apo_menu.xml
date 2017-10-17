@@ -13,200 +13,222 @@
         android:layout_alignParentLeft="true"
         android:background="@drawable/menu_bkg">
 
-        <ImageButton android:id="@+id/about_button"
+        <ImageButton
+            android:id="@+id/about_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/about_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/about_button" />
 
-        <ImageButton android:id="@+id/events_button"
+        <ImageButton
+            android:id="@+id/events_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/about_button"
             android:layout_alignTop="@id/about_button"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/events_button"
-            android:background="@android:color/transparent"/>
+            android:layout_toRightOf="@id/about_button"
+            android:background="@android:color/transparent"
+            android:src="@drawable/events_button" />
 
-        <ImageButton android:id="@+id/poster_button"
+        <ImageButton
+            android:id="@+id/poster_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/about_button"
             android:layout_alignLeft="@id/about_button"
+            android:layout_below="@id/about_button"
             android:layout_marginTop="15dp"
-            android:src="@drawable/poster_btn_normal_arm"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/poster_btn_normal_arm" />
 
-        <ImageButton android:id="@+id/newsletter_button"
+        <ImageButton
+            android:id="@+id/newsletter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/events_button"
             android:layout_alignTop="@id/poster_button"
-            android:src="@drawable/newsletter_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/newsletter_button" />
 
-        <ImageButton android:id="@+id/reviews_button"
+        <ImageButton
+            android:id="@+id/reviews_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/poster_button"
             android:layout_alignLeft="@id/poster_button"
+            android:layout_below="@id/poster_button"
             android:layout_marginTop="15dp"
-            android:src="@drawable/reviews_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/reviews_button" />
 
-        <ImageButton android:id="@+id/photos_button"
+        <ImageButton
+            android:id="@+id/photos_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/newsletter_button"
             android:layout_alignTop="@id/reviews_button"
-            android:src="@drawable/photos_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/photos_button" />
 
-        <ImageButton android:id="@+id/video_button"
+        <ImageButton
+            android:id="@+id/video_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/reviews_button"
             android:layout_below="@id/reviews_button"
             android:layout_marginTop="15dp"
-            android:src="@drawable/video_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/video_button" />
 
-        <ImageButton android:id="@+id/music_button"
+        <ImageButton
+            android:id="@+id/music_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/photos_button"
             android:layout_alignTop="@id/video_button"
-            android:src="@drawable/music_button"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/music_button" />
 
-        <ImageView android:id="@+id/social_label"
+        <ImageView
+            android:id="@+id/social_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/menu_social"
-            android:background="@android:color/transparent"/>
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/menu_social" />
 
-        <ImageButton android:id="@+id/naxos_button"
+        <ImageButton
+            android:id="@+id/cdbaby_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/about_button"
             android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@id/about_button"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/naxos_button"
-            android:background="@android:color/transparent"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/cd_btn_normal2x" />
 
-        <ImageButton android:id="@+id/allmusic_button"
+        <ImageButton
+            android:id="@+id/blog_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/naxos_button"
-            android:layout_alignLeft="@id/events_button"
-            android:src="@drawable/allmusic_button"
-            android:background="@android:color/transparent"/>
+            android:layout_alignLeft="@+id/events_button"
+            android:layout_alignTop="@+id/cdbaby_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/blog_btn_normal2x" />
 
-
-        <ImageButton android:id="@+id/albums_button"
+        <ImageButton
+            android:id="@+id/allmusic_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/about_button"
-            android:layout_above="@id/naxos_button"
+            android:layout_alignLeft="@+id/events_button"
+            android:layout_alignTop="@+id/amazon_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/allmusic_btn_normal2x" />
+
+
+        <ImageButton
+            android:id="@+id/instagram_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/music_button"
+            android:layout_alignTop="@+id/facebook_button"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/albums_button"
-            android:background="@android:color/transparent"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/instagram_btn_normal2x" />
 
-        <ImageButton android:id="@+id/blog_button"
+        <ImageButton
+            android:id="@+id/amazon_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/albums_button"
-            android:layout_alignLeft="@id/events_button"
-            android:src="@drawable/blog_button"
-            android:background="@android:color/transparent"/>
-
-        <ImageButton android:id="@+id/amazon_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/albums_button"
-            android:layout_alignLeft="@id/naxos_button"
+            android:layout_above="@+id/cdbaby_button"
+            android:layout_alignLeft="@+id/cdbaby_button"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/amazon_button"
-            android:background="@android:color/transparent"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/amazon_btn_normal2x" />
 
-        <ImageButton android:id="@+id/youtube_button"
+        <ImageButton
+            android:id="@+id/youtube_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/amazon_button"
-            android:layout_alignLeft="@id/allmusic_button"
-            android:src="@drawable/youtube_button"
-            android:background="@android:color/transparent"/>
+            android:layout_alignLeft="@+id/music_button"
+            android:layout_alignTop="@+id/twitter_button"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/youtube_btn_normal2x" />
 
-        <ImageButton android:id="@+id/facebook_button"
+        <ImageButton
+            android:id="@+id/facebook_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/amazon_button"
+            android:layout_above="@+id/twitter_button"
+            android:layout_alignLeft="@+id/video_button"
             android:layout_marginBottom="15dp"
-            android:layout_alignLeft="@id/video_button"
-            android:src="@drawable/facebook_button"
-            android:background="@android:color/transparent"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/facebook_btn_normal2x" />
 
-        <ImageButton android:id="@+id/twitter_button"
+        <ImageButton
+            android:id="@+id/twitter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/allmusic_button"
-            android:layout_alignTop="@id/facebook_button"
-            android:src="@drawable/twitter_button"
-            android:background="@android:color/transparent"/>
+            android:layout_above="@+id/amazon_button"
+            android:layout_alignLeft="@+id/video_button"
+            android:layout_marginBottom="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/twitter_btn_normal2x" />
 
     </RelativeLayout>
 
-    <ImageButton android:id="@+id/settings_button"
+    <ImageButton
+        android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/settings_item_margin_top"
-        android:layout_marginRight="@dimen/settings_item_margin_right"
         android:layout_alignParentRight="true"
-        android:src="@drawable/settings_button"
-        android:background="@android:color/transparent"/>
+        android:layout_marginRight="@dimen/settings_item_margin_right"
+        android:layout_marginTop="@dimen/settings_item_margin_top"
+        android:background="@android:color/transparent"
+        android:src="@drawable/settings_button" />
 
-    <ImageButton android:id="@+id/sponsors_button"
+    <ImageButton
+        android:id="@+id/sponsors_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/sponsors_item_margin_top"
         android:layout_alignLeft="@id/settings_button"
         android:layout_below="@id/settings_button"
-        android:src="@drawable/sponsors_button"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="@dimen/sponsors_item_margin_top"
+        android:background="@android:color/transparent"
+        android:src="@drawable/sponsors_button" />
 
-    <ImageButton android:id="@+id/tickets_button"
+    <ImageButton
+        android:id="@+id/tickets_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/sponsors_item_margin_top"
         android:layout_alignLeft="@id/settings_button"
         android:layout_alignRight="@id/settings_button"
         android:layout_below="@id/sponsors_button"
-        android:src="@drawable/buy_tickets_button"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="@dimen/sponsors_item_margin_top"
+        android:background="@android:color/transparent"
+        android:src="@drawable/buy_tickets_button" />
 
-    <ImageButton android:id="@+id/stream_button"
+    <ImageButton
+        android:id="@+id/stream_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/sponsors_item_margin_top"
         android:layout_alignLeft="@id/settings_button"
         android:layout_alignRight="@id/settings_button"
         android:layout_below="@id/tickets_button"
-        android:src="@drawable/online_btn"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="@dimen/sponsors_item_margin_top"
+        android:background="@android:color/transparent"
+        android:src="@drawable/online_btn" />
 
     <RelativeLayout
         android:id="@+id/flags_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/settings_button"
         android:layout_alignRight="@id/settings_button"
+        android:layout_below="@id/settings_button"
         android:background="@drawable/settings_bkg"
         android:visibility="gone">
 
@@ -214,35 +236,35 @@
             android:id="@+id/flag_arm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/flag_button_arm"/>
+            android:src="@drawable/flag_button_arm" />
 
         <ImageButton
             android:id="@+id/flag_eng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/flag_arm"
-            android:layout_toRightOf="@id/flag_arm"
             android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/flag_arm"
             android:background="@android:color/transparent"
-            android:src="@drawable/flag_button_eng"/>
+            android:src="@drawable/flag_button_eng" />
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/logo_img"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/ministry"
+        android:layout_toRightOf="@+id/menu_items"
         android:scaleType="fitEnd"
-        android:layout_toRightOf="@+id/menu_items"/>
+        android:src="@drawable/ministry" />
 
     <ImageView
         android:id="@+id/sponsors_popup"
@@ -250,9 +272,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/sponsors_button"
         android:src="@drawable/sponsors_img"
-        android:visibility="gone">
-    </ImageView>
-
+        android:visibility="gone"></ImageView>
 
 
 </RelativeLayout>

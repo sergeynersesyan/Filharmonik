@@ -14,18 +14,16 @@ public class ManagementActivity extends ApoSectionActivity implements StaticCont
     ImageButton mBtnStructure;
     ImageButton mBtnRuzan;
     ImageButton mBtnArman;
-    ImageButton mBtnDavit;
     StaticContentFlipper mFlipper;
 
     int mCurrentIndex;
     int INDEX_STRUCTURE = 0;
     int INDEX_RUZAN = 1;
     int INDEX_ARMAN = 2;
-    int INDEX_DAVIT = 3;
 
     int subTitles[] = {R.string.SUB_TITLE_STRUCTURE, R.string.SUB_TITLE_RUZAN, R.string.SUB_TITLE_ARMAN, R.string.SUB_TITLE_DAVIT};
-    int bigPics[] = {R.drawable.management_structure, R.drawable.management_big_1, R.drawable.management_big_2, R.drawable.management_big_3};
-    int bigDesc[] = {R.string.structure_description, R.string.ruzan_description, R.string.arman_description, R.string.davit_description};
+    int bigPics[] = {R.drawable.management_structure, R.drawable.management_big_1, R.drawable.management_big_2};
+    int bigDesc[] = {R.string.structure_description, R.string.ruzan_description, R.string.arman_description};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,6 @@ public class ManagementActivity extends ApoSectionActivity implements StaticCont
         mBtnStructure = (ImageButton)findViewById(R.id.management_structure_button);
         mBtnRuzan = (ImageButton)findViewById(R.id.management_1_button);
         mBtnArman = (ImageButton)findViewById(R.id.management_2_button);
-        mBtnDavit = (ImageButton)findViewById(R.id.management_3_button);
 
         mFlipper = new StaticContentFlipper(this);
         mFlipper.setCardInfo(bigPics[mCurrentIndex], getString(bigDesc[mCurrentIndex]));
@@ -64,12 +61,6 @@ public class ManagementActivity extends ApoSectionActivity implements StaticCont
             }
         });
 
-        mBtnDavit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setActiveButton(INDEX_DAVIT);
-            }
-        });
     }
 
     @Override
@@ -95,16 +86,15 @@ public class ManagementActivity extends ApoSectionActivity implements StaticCont
         {
             index = 0;
         }
-        else if(index > INDEX_DAVIT)
+        else if(index > INDEX_ARMAN)
         {
-            index = INDEX_DAVIT;
+            index = INDEX_ARMAN;
         }
         mCurrentIndex = index;
 
         mBtnStructure.setSelected(INDEX_STRUCTURE==index);
         mBtnRuzan.setSelected(INDEX_RUZAN==index);
         mBtnArman.setSelected(INDEX_ARMAN==index);
-        mBtnDavit.setSelected(INDEX_DAVIT==index);
 
         setSubTitle(getString(subTitles[index]));
 

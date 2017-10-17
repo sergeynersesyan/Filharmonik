@@ -1,6 +1,5 @@
 package am.apo.filharmonik;
 
-import android.app.ActivityOptions;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -20,11 +19,11 @@ public class MainMenuActivity extends ApoFullScreenActivity {
 
     private final int FACEBOOK_LINK_INDEX = 0;
     private final int TWITTER_LINK_INDEX = 1;
-    private final int ALBUMS_LINK_INDEX = 2;
+    private final int INSTA_LINK_INDEX = 2;
     private final int BLOG_LINK_INDEX = 3;
     private final int AMAZON_LINK_INDEX = 4;
     private final int YOUTUBE_LINK_INDEX = 5;
-    private final int NAXOS_LINK_INDEX = 6;
+    private final int CDBABY_LINK_INDEX = 6;
     private final int ALLMUSIC_LINK_INDEX = 7;
     private final int STREAM_LINK_INDEX = 8;
 
@@ -154,11 +153,11 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         mLinkInfoArr = new LinkInfo[] {
                 new LinkInfo("com.facebook.katana", R.string.FACEBOOK_APP_URI, R.string.FACEBOOK_URL),
                 new LinkInfo("com.twitter.android", R.string.TWITTER_APP_URI, R.string.TWITTER_URL),
-                new LinkInfo(null, R.string.ALBUMS_APP_URI, R.string.ALBUMS_URL),
+                new LinkInfo(null, R.string.ALBUMS_APP_URI, R.string.INSTAGRAM_URL),
                 new LinkInfo(null, R.string.BLOG_APP_URI, R.string.BLOG_URL),
                 new LinkInfo(null, R.string.AMAZON_APP_URI, R.string.AMAZON_URL),
                 new LinkInfo("com.google.android.youtube", R.string.YOUTUBE_APP_URI, R.string.YOUTUBE_URL),
-                new LinkInfo(null, R.string.NAXOS_APP_URI, R.string.NAXOS_URL),
+                new LinkInfo(null, R.string.NAXOS_APP_URI, R.string.CDBABY_URL),
                 new LinkInfo(null, R.string.ALLMUSIC_APP_URI, R.string.ALLMUSIC_URL),
                 new LinkInfo("com.google.android.youtube", R.string.ALLMUSIC_APP_URI, R.string.LIVE_STREAM_URL),
         };
@@ -256,11 +255,11 @@ public class MainMenuActivity extends ApoFullScreenActivity {
 
         setLinkHandler(R.id.facebook_button, FACEBOOK_LINK_INDEX, getString(R.string.TITLE_FACEBOOK));
         setLinkHandler(R.id.twitter_button, TWITTER_LINK_INDEX, getString(R.string.TITLE_TWITTER));
-        setLinkHandler(R.id.albums_button, ALBUMS_LINK_INDEX, getString(R.string.TITLE_ALBUMS));
+        setLinkHandler(R.id.instagram_button, INSTA_LINK_INDEX, getString(R.string.TITLE_INSTA));
         setLinkHandler(R.id.blog_button, BLOG_LINK_INDEX, getString(R.string.TITLE_BLOG));
         setLinkHandler(R.id.amazon_button, AMAZON_LINK_INDEX, getString(R.string.TITLE_AMAZON));
         setLinkHandler(R.id.youtube_button, YOUTUBE_LINK_INDEX, getString(R.string.TITLE_YOUTUBE));
-        setLinkHandler(R.id.naxos_button, NAXOS_LINK_INDEX, getString(R.string.TITLE_NAXOS));
+        setLinkHandler(R.id.cdbaby_button, CDBABY_LINK_INDEX, getString(R.string.TITLE_CDBABY));
         setLinkHandler(R.id.allmusic_button, ALLMUSIC_LINK_INDEX, getString(R.string.TITLE_ALLMUSIC));
         setLinkHandler(R.id.stream_button, STREAM_LINK_INDEX, "LIVE NOW");
     }
