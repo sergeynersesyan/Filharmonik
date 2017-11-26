@@ -88,7 +88,7 @@ public class IntroActivity extends ApoFullScreenActivity {
             }
         }
 
-        updateBackgroundImage();
+//        updateBackgroundImage();
     }
 
     private boolean checkPlayServices() {
@@ -212,6 +212,7 @@ public class IntroActivity extends ApoFullScreenActivity {
         editor.commit();
     }
 
+    // not using now
     public void updateBackgroundImage()
     {
         final SharedPreferences prefs = getSharedPreferences(ApoFullScreenActivity.class.getSimpleName(), Context.MODE_PRIVATE);

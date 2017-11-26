@@ -152,9 +152,6 @@ public class ApoListFragment extends ListFragment {
 
         if(activity.getSectionID().equals(ApoContract.APO_REVIEW))
         {
-            RelativeLayout filterLayout = (RelativeLayout)activity.findViewById(R.id.filter_layout);
-            filterLayout.setVisibility(View.VISIBLE);
-
             mCDButton = (ImageButton)activity.findViewById(R.id.filter_cd_button);
             mCDButton.setOnClickListener(new View.OnClickListener() {
                 @Override

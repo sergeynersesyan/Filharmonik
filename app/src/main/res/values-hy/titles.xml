@@ -22,11 +22,11 @@
     <string name="TITLE_ALLMUSIC">ALLMUSIC</string>
 
     <string name="SUB_TITLE_ANPO">Հայաստանի Ազգային Ֆիլհարմոնիկ Նվագախումբ</string>
-    <string name="SUB_TITLE_MAESTRO">Մաեստրո</string>
+    <string name="SUB_TITLE_MAESTRO">ԷԴՈՒԱՐԴ ԹՈՓՉՅԱՆ</string>
     <string name="SUB_TITLE_MUSICIANS">Նվագախմբի Երաժիշտներ</string>
     <string name="SUB_TITLE_POST_MAESTROS">Նախկին Գեղարվեստական Ղեկավարներ</string>
-    <string name="SUB_TITLE_GUESTS">Հրավիրյալ Մենակատարներ</string>
-    <string name="SUB_TITLE_LOCALS">Հայ Մենակատարներ</string>
+    <string name="SUB_TITLE_GUESTS">Հրավիրյալ մենակատարներ</string>
+    <string name="SUB_TITLE_LOCALS">Հայ մենակատարներ</string>
     <string name="SUB_TITLE_SOCIAL">ANPO sharing</string>
 
     <string name="SUB_TITLE_STRUCTURE">Կառուցվածք</string>
