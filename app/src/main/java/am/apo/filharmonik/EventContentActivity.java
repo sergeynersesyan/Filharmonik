@@ -78,7 +78,7 @@ public class EventContentActivity extends ApoSectionActivity implements EventAct
     private void setData (JSONObject obj) throws JSONException {
         setSubTitle(obj.getString(ApoContract.APO_JSON_TITLE));
         mImageView.loadUrl(obj.getString(ApoContract.APO_JSON_PICTURE));
-        mTextView.setText(FormatParser.parse(obj.getString(ApoContract.APO_JSON_DESCRIPTION) + "\n[b]bold[/b] [b]text[/b] usual text"));
+        mTextView.setText(FormatParser.parse(obj.getString(ApoContract.APO_JSON_DESCRIPTION)));//+ "\n[b]bold[/b] [b]text[/b] usual text"));
     }
 
 
