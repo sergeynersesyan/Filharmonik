@@ -4,7 +4,7 @@ android:id="@+id/full_screen_content"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/apo_bkg"
-tools:context="am.apo.filharmonik.PosterActivity">
+tools:context="am.apo.filharmonik2.PosterActivity">
 
     <include
         android:id="@+id/top_bar"

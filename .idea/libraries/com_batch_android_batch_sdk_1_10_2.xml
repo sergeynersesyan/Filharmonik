@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.batch.android:batch-sdk-1.10.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/batch-sdk-1.10.2.aar/b01afd4d1a0fbe86b7bc5117be98e7dd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/batch-sdk-1.10.2.aar/b01afd4d1a0fbe86b7bc5117be98e7dd/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

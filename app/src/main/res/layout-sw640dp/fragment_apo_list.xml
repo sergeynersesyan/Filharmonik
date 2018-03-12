@@ -3,7 +3,7 @@
     android:id="@+id/list_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="am.apo.filharmonik.ApoListFragment">
+    tools:context="am.apo.filharmonik2.ApoListFragment">
 
     <ImageButton
         android:id="@+id/list_handle"

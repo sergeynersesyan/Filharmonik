@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/apo_bkg"
-    tools:context="am.apo.filharmonik.DynamicContentActivity">
+    tools:context="am.apo.filharmonik2.DynamicContentActivity">
 
     <include
         android:id="@+id/top_bar"

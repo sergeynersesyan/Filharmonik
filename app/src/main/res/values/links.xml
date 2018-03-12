@@ -13,7 +13,7 @@
     <string name="YOUTUBE_URL">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg</string>
     <string name="CDBABY_URL">https://store.cdbaby.com/cd/edwardhosharian</string>
     <string name="ALLMUSIC_URL">http://www.allmusic.com/artist/armenian-philharmonic-orchestra-mn0001936802/credits</string>
-    <string name="LIVE_STREAM_URL">https://www.youtube.com/watch?v=RtU_mdL2vBM</string>
+    <string name="LIVE_STREAM_URL">https://www.youtube.com/channel/UCAjrjskqtjyFYYWIg-gI1Cg/live</string>
 
 
     <string name="FACEBOOK_APP_URI">fb://profile/196825040341665</string>

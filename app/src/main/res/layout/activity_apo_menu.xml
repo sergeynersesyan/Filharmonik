@@ -221,7 +221,7 @@
         android:layout_below="@id/tickets_button"
         android:layout_marginTop="@dimen/sponsors_item_margin_top"
         android:background="@android:color/transparent"
-        android:src="@drawable/online_btn" />
+        android:src="@drawable/online_btn"/>
 
     <RelativeLayout
         android:id="@+id/flags_popup"

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="am.apo.filharmonik" >
+    package="am.apo.filharmonik2" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
-        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:name="am.apo.filharmonik2.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="am.apo.filharmonik2.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/filharmonik"
+        android:icon="@drawable/filharmonik_152"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-        android:name=".ApoApp">
+        android:name="am.apo.filharmonik2.ApoApp">
+
+
 
         <!-- Required for applications which use Google Play Services. -->
         <meta-data
@@ -30,7 +31,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="am.apo.filharmonik.IntroActivity"
+            android:name="am.apo.filharmonik2.IntroActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >
@@ -41,18 +42,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="am.apo.filharmonik.MainMenuActivity"
+            android:name="am.apo.filharmonik2.MainMenuActivity"
             android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
-            android:name="am.apo.filharmonik.PhotoActivity"
+            android:name="am.apo.filharmonik2.PhotoActivity"
             android:theme="@style/FullscreenTheme" >
         </activity>
-        <activity android:name="am.apo.filharmonik.PlayerActivity" >
+        <activity android:name="am.apo.filharmonik2.PlayerActivity" >
         </activity>
 
         <receiver
-            android:name="am.apo.filharmonik.GcmBroadcastReceiver"
+            android:name="am.apo.filharmonik2.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -61,33 +62,48 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="am.apo.filharmonik.GcmIntentService" />
+        <service android:name="am.apo.filharmonik2.GcmIntentService" />
 
         <activity
-            android:name="am.apo.filharmonik.PlayerPlayActivity"
+            android:name="am.apo.filharmonik2.PlayerPlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensor" >
         </activity>
-        <activity android:name="am.apo.filharmonik.DynamicActivity" >
+        <activity android:name="am.apo.filharmonik2.DynamicActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.DynamicContentActivity" >
+        <activity android:name="am.apo.filharmonik2.DynamicContentActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.AboutActivity" >
+        <activity android:name="am.apo.filharmonik2.AboutActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.ManagementActivity" >
+        <activity android:name="am.apo.filharmonik2.ManagementActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.OrchestraActivity" >
+        <activity android:name="am.apo.filharmonik2.OrchestraActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.PosterActivity" >
+        <activity android:name="am.apo.filharmonik2.PosterActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.BrowserActivity" >
+        <activity android:name="am.apo.filharmonik2.BrowserActivity" >
         </activity>
-        <activity android:name="am.apo.filharmonik.DynamicLargeActivity">
+        <activity android:name="am.apo.filharmonik2.DynamicLargeActivity">
         </activity>
-        <activity android:name="am.apo.filharmonik.PosterLargeActivity">
+        <activity android:name="am.apo.filharmonik2.PosterLargeActivity">
         </activity>
-        <activity android:name="am.apo.filharmonik.EventContentActivity">
+        <activity android:name="am.apo.filharmonik2.EventContentActivity">
         </activity>
+
+        <service android:name="com.batch.android.BatchPushService" />
+        <receiver android:name="com.batch.android.BatchPushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+
+        <service android:name="com.batch.android.BatchPushInstanceIDService" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

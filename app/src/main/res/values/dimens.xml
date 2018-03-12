@@ -32,6 +32,7 @@
     <dimen name="navbar_sub_title_margin_top">7dp</dimen>
     <dimen name="navbar_sub_title_margin_horizontal">37dp</dimen>
     <dimen name="navbar_sub_title_font_size">11sp</dimen>
+    <dimen name="info_text_size">18sp</dimen>
 
     <dimen name="static_text_size">12sp</dimen>
 

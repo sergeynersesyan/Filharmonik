@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <am.apo.filharmonik.RoundedImageView
+    <am.apo.filharmonik2.RoundedImageView
         android:id="@+id/photo_grid_image"
         android:layout_width="@dimen/dynamic_thumb_width"
         android:layout_height="@dimen/dynamic_thumb_height"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/apo_bkg"
-    tools:context="am.apo.filharmonik.EventContentActivity">
+    tools:context="am.apo.filharmonik2.EventContentActivity">
 
     <include
         android:id="@+id/top_bar"
@@ -49,7 +49,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/event_image"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="event"
+                android:textSize="18sp"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

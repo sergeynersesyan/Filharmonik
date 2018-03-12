@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "335176342881",
+    "firebase_url": "https://filharmonik2014.firebaseio.com",
+    "project_id": "filharmonik2014",
+    "storage_bucket": "filharmonik2014.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335176342881:android:4bbfb3ed0bc031fc",
+        "android_client_info": {
+          "package_name": "am.apo.filharmonik2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335176342881-lsq6t63dv8ubojg75aapulc3lris1von.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW7jWICYGYkDpRYVveCQX-naXPaWWH4eE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
