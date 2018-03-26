@@ -16,6 +16,7 @@
 
 package am.apo.filharmonik2;
 
+import com.batch.android.Batch;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import android.app.IntentService;
@@ -45,8 +46,39 @@ public class GcmIntentService extends IntentService {
         // The getMessageType() intent parameter must be the intent you received
         // in your BroadcastReceiver.
         String messageType = gcm.getMessageType(intent);
+        if( Batch.Push.shouldDisplayPush(this, intent) ) // Check that the push is valid
+        {
+            String alert = intent.getStringExtra(Batch.Push.ALERT_KEY);
+            Intent launchIntent = new Intent(this, MainMenuActivity.class);
+            // Use the alert text to display the notification
+            launchIntent.putExtra(ApoContract.APO_PUSH_BODY, alert);
+            String title = intent.getStringExtra(Batch.Push.TITLE_KEY);
+            if( title != null && !title.trim().isEmpty() )
+            {
+                launchIntent.putExtra(ApoContract.APO_PUSH_TITLE, title);
+                // Use the title to display the notification
+            }
+            Batch.Push.appendBatchData(intent, launchIntent);
 
-        if (!extras.isEmpty()) {  // has effect of unparcelling Bundle
+            PendingIntent contentIntent = PendingIntent.getActivity(this, 0, launchIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(this)
+                            .setSmallIcon(R.drawable.filharmonik_152)
+                            .setContentTitle(title == null ? getString(R.string.SUB_TITLE_ANPO): title)
+                            .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                            .setAutoCancel(true)
+                            .setContentText(alert);
+
+            mBuilder.setContentIntent(contentIntent);
+            mNotificationManager = (NotificationManager)
+                    this.getSystemService(Context.NOTIFICATION_SERVICE);
+            mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+
+//            Batch.Push.displayNotification(this, intent);
+            Batch.Push.onNotificationDisplayed(this, intent);
+
+        } else if (!extras.isEmpty()) {  // has effect of unparcelling Bundle
             /*
              * Filter messages based on message type. Since it is likely that GCM will be
              * extended in the future with new message types, just ignore any message types you're

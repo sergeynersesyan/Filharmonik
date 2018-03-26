@@ -18,6 +18,7 @@ public class ApoApp extends Application {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
         Foreground.init(this);
         Batch.Push.setGCMSenderId("335176342881");
+        Batch.Push.setManualDisplay(true);
         Batch.setConfig(new Config("5A871FC44426845753950243DDD971"));
 //        }
     }

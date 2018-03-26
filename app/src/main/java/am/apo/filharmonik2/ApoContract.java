@@ -34,6 +34,7 @@ public class ApoContract {
     public static final String APO_JSON_COVER = "cover";
     public static final String APO_JSON_NAME = "name";
     public static final String APO_PUSH_BODY = "body";
+    public static final String APO_PUSH_TITLE = "title";
     public static final String APO_PUSH_SECTION_ID = "sid";
 
 }

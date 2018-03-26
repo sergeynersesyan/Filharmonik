@@ -2,11 +2,13 @@ package am.apo.filharmonik2;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,9 +19,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Locale;
 
 
@@ -38,20 +38,21 @@ public class MainMenuActivity extends ApoFullScreenActivity {
     private Locale mLocale;
 
     private ImageButton ticketsButton;
-    LinkInfo [] mLinkInfoArr;
+    LinkInfo[] mLinkInfoArr;
 
-    protected class LinkInfo{
+    protected class LinkInfo {
         String mPackageName;
         int mAppURI;
         int mURL;
 
-        public LinkInfo(String packageName, int uriID, int urlID)
-        {
+        public LinkInfo(String packageName, int uriID, int urlID) {
             mPackageName = packageName;
             mAppURI = uriID;
             mURL = urlID;
         }
-    };
+    }
+
+    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +60,14 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         setContentView(R.layout.activity_apo_menu);
 
         String pushSectionID = getIntent().getStringExtra(ApoContract.APO_PUSH_SECTION_ID);
+        String pushText = getIntent().getStringExtra(ApoContract.APO_PUSH_BODY);
 
-        if(null != pushSectionID)
-        {
-            Toast.makeText(getApplicationContext(), getIntent().getStringExtra(ApoContract.APO_PUSH_BODY), Toast.LENGTH_LONG).show();
+        if (null != pushSectionID) {
+            Toast.makeText(getApplicationContext(), pushText, Toast.LENGTH_LONG).show();
             openSection(pushSectionID);
+        }
+        if (pushText != null) {
+            createDialog(getIntent().getStringExtra(ApoContract.APO_PUSH_TITLE), pushText);
         }
 
         ImageButton settingsButton = (ImageButton) findViewById(R.id.settings_button);
@@ -107,8 +111,22 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         requestTicketsUrl();
 
 
-
         fillMenu();
+    }
+
+    private void createDialog(String title, String message) {
+        final AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(this);
+        if (title != null) {
+            builder.setTitle(title);
+        }
+        builder.setMessage(message)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).setCancelable(true)
+                .show();
     }
 
     private void requestTicketsUrl() {
@@ -156,8 +174,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
 
         Log.e(TAG, "On new intent called!!!");
         String pushSectionID = intent.getStringExtra(ApoContract.APO_PUSH_SECTION_ID);
-        if(null != pushSectionID)
-        {
+        if (null != pushSectionID) {
             Log.e(TAG, "menu Push received: " + pushSectionID + ", body: " + intent.getStringExtra(ApoContract.APO_PUSH_BODY));
             Toast.makeText(getApplicationContext(), intent.getStringExtra(ApoContract.APO_PUSH_BODY), Toast.LENGTH_LONG).show();
         }
@@ -168,8 +185,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
     public boolean onContentClick() {
         RelativeLayout flagsPopup = (RelativeLayout) findViewById(R.id.flags_popup);
         View sponsorsPopup = findViewById(R.id.sponsors_popup);
-        if(View.VISIBLE==flagsPopup.getVisibility() || View.VISIBLE==sponsorsPopup.getVisibility())
-        {
+        if (View.VISIBLE == flagsPopup.getVisibility() || View.VISIBLE == sponsorsPopup.getVisibility()) {
             flagsPopup.setVisibility(View.GONE);
             sponsorsPopup.setVisibility(View.GONE);
             return false;
@@ -178,8 +194,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         return super.onContentClick();
     }
 
-    void fillMenu()
-    {
+    void fillMenu() {
         String currLang = ApoUtils.sharedUtils(this).getLanguage();
         findViewById(R.id.flag_arm).setSelected(currLang.equals(getString(R.string.pref_lang_arm)));
         findViewById(R.id.flag_eng).setSelected(currLang.equals(getString(R.string.pref_lang_eng)));
@@ -190,7 +205,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         config.locale = mLocale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        mLinkInfoArr = new LinkInfo[] {
+        mLinkInfoArr = new LinkInfo[]{
                 new LinkInfo("com.facebook.katana", R.string.FACEBOOK_APP_URI, R.string.FACEBOOK_URL),
                 new LinkInfo("com.twitter.android", R.string.TWITTER_APP_URI, R.string.TWITTER_URL),
                 new LinkInfo(null, R.string.ALBUMS_APP_URI, R.string.INSTAGRAM_URL),
@@ -290,7 +305,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         ImageView ministry = (ImageView) findViewById(R.id.logo_img);
         ministry.setImageDrawable(getResources().getDrawable(R.drawable.ministry));
 
-        ImageView socialLabel = (ImageView)findViewById(R.id.social_label);
+        ImageView socialLabel = (ImageView) findViewById(R.id.social_label);
         socialLabel.setImageDrawable(getResources().getDrawable(R.drawable.menu_social));
 
         setLinkHandler(R.id.facebook_button, FACEBOOK_LINK_INDEX, getString(R.string.TITLE_FACEBOOK));
@@ -304,8 +319,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         setLinkHandler(R.id.stream_button, STREAM_LINK_INDEX, "LIVE NOW");
     }
 
-    private void setLinkHandler(int buttonID, final int index, final String title)
-    {
+    private void setLinkHandler(int buttonID, final int index, final String title) {
         ImageButton linkButton = (ImageButton) findViewById(buttonID);
         linkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -315,8 +329,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         });
     }
 
-    private void openLink(int index, String title)
-    {
+    private void openLink(int index, String title) {
 
         try {
             if (isAppInstalled(mLinkInfoArr[index].mPackageName)) {
@@ -334,44 +347,38 @@ public class MainMenuActivity extends ApoFullScreenActivity {
                 browserIntent.putExtra(getString(R.string.link_title), title);
                 startActivity(browserIntent);
             }
+        } catch (Exception e) {
         }
-        catch (Exception e){}
     }
 
-    private void openSection(String sectionID)
-    {
+    private void openSection(String sectionID) {
         Intent sectionIntent;
 
-        if(sectionID.equals(ApoContract.APO_EVENT) || sectionID.equals(ApoContract.APO_REVIEW) || sectionID.equals(ApoContract.APO_NEWSLETTER)) {
+        if (sectionID.equals(ApoContract.APO_EVENT) || sectionID.equals(ApoContract.APO_REVIEW) || sectionID.equals(ApoContract.APO_NEWSLETTER)) {
             sectionIntent = new Intent(getApplicationContext(), getResources().getBoolean(R.bool.device_is_phone) ? DynamicActivity.class : DynamicLargeActivity.class);
-        }
-        else if(sectionID.equals(ApoContract.APO_POSTER) ) {
+        } else if (sectionID.equals(ApoContract.APO_POSTER)) {
             sectionIntent = new Intent(getApplicationContext(), getResources().getBoolean(R.bool.device_is_phone) ? PosterActivity.class : PosterLargeActivity.class);
-        }
-        else if(sectionID.equals(ApoContract.APO_PHOTO)) {
+        } else if (sectionID.equals(ApoContract.APO_PHOTO)) {
             sectionIntent = new Intent(getApplicationContext(), PhotoActivity.class);
-        }
-        else if(sectionID.equals(ApoContract.APO_MUSIC) || sectionID.equals(ApoContract.APO_VIDEO)) {
+        } else if (sectionID.equals(ApoContract.APO_MUSIC) || sectionID.equals(ApoContract.APO_VIDEO)) {
             sectionIntent = new Intent(getApplicationContext(), PlayerActivity.class);
-        }
-        else
-        {
+        } else {
             sectionIntent = null;
         }
-        if(null != sectionIntent) {
+        if (null != sectionIntent) {
             sectionIntent.putExtra(ApoContract.APO_SECTION_ID, sectionID);
             startActivity(sectionIntent);
         }
     }
 
     private boolean isAppInstalled(String packageName) {
-        if(null != packageName) {
+        if (null != packageName) {
             Intent mIntent = getPackageManager().getLaunchIntentForPackage(packageName);
 
             Log.e(TAG, packageName + " isAppInstalled: " + mIntent);
             return (null != mIntent);
         }
-        Log.e(TAG, packageName + " isAppInstalled: null apriori" );
+        Log.e(TAG, packageName + " isAppInstalled: null apriori");
 
         return false;
     }
