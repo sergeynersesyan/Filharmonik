@@ -31,9 +31,9 @@ public class MainMenuActivity extends ApoFullScreenActivity {
     private final int BLOG_LINK_INDEX = 3;
     private final int AMAZON_LINK_INDEX = 4;
     private final int YOUTUBE_LINK_INDEX = 5;
-    private final int CDBABY_LINK_INDEX = 6;
-    private final int ALLMUSIC_LINK_INDEX = 7;
-    private final int STREAM_LINK_INDEX = 8;
+//    private final int CDBABY_LINK_INDEX = 6;
+    private final int ALLMUSIC_LINK_INDEX = 6;
+    private final int STREAM_LINK_INDEX = 7;
 
     private Locale mLocale;
 
@@ -212,9 +212,9 @@ public class MainMenuActivity extends ApoFullScreenActivity {
                 new LinkInfo(null, R.string.BLOG_APP_URI, R.string.BLOG_URL),
                 new LinkInfo(null, R.string.AMAZON_APP_URI, R.string.AMAZON_URL),
                 new LinkInfo("com.google.android.youtube", R.string.YOUTUBE_APP_URI, R.string.YOUTUBE_URL),
-                new LinkInfo(null, R.string.NAXOS_APP_URI, R.string.CDBABY_URL),
                 new LinkInfo(null, R.string.ALLMUSIC_APP_URI, R.string.ALLMUSIC_URL),
                 new LinkInfo("com.google.android.youtube", R.string.ALLMUSIC_APP_URI, R.string.LIVE_STREAM_URL),
+//                new LinkInfo(null, R.string.NAXOS_APP_URI, R.string.CDBABY_URL),
         };
 
         ImageButton aboutButton = (ImageButton) findViewById(R.id.about_button);
@@ -299,8 +299,8 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         ImageButton tickets = (ImageButton) findViewById(R.id.tickets_button);
         tickets.setImageDrawable(getResources().getDrawable(R.drawable.buy_tickets_button));
 
-        ImageButton onlineStream = (ImageButton) findViewById(R.id.stream_button);
-        onlineStream.setImageDrawable(getResources().getDrawable(R.drawable.online_btn));
+//        ImageButton onlineStream = (ImageButton) findViewById(R.id.stream_button);
+//        onlineStream.setImageDrawable(getResources().getDrawable(R.drawable.online_btn));
 
         ImageView ministry = (ImageView) findViewById(R.id.logo_img);
         ministry.setImageDrawable(getResources().getDrawable(R.drawable.ministry));
@@ -314,7 +314,7 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         setLinkHandler(R.id.blog_button, BLOG_LINK_INDEX, getString(R.string.TITLE_BLOG));
         setLinkHandler(R.id.amazon_button, AMAZON_LINK_INDEX, getString(R.string.TITLE_AMAZON));
         setLinkHandler(R.id.youtube_button, YOUTUBE_LINK_INDEX, getString(R.string.TITLE_YOUTUBE));
-        setLinkHandler(R.id.cdbaby_button, CDBABY_LINK_INDEX, getString(R.string.TITLE_CDBABY));
+//        setLinkHandler(R.id.cdbaby_button, CDBABY_LINK_INDEX, getString(R.string.TITLE_CDBABY));
         setLinkHandler(R.id.allmusic_button, ALLMUSIC_LINK_INDEX, getString(R.string.TITLE_ALLMUSIC));
         setLinkHandler(R.id.stream_button, STREAM_LINK_INDEX, "LIVE NOW");
     }

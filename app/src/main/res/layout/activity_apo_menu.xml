@@ -102,21 +102,21 @@
             android:src="@drawable/menu_social" />
 
         <ImageButton
-            android:id="@+id/cdbaby_button"
+            android:id="@+id/twitter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/about_button"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="15dp"
             android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/cd_btn_normal2x" />
+            android:src="@drawable/twitter_btn_normal2x" />
 
         <ImageButton
             android:id="@+id/blog_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/events_button"
-            android:layout_alignTop="@+id/cdbaby_button"
+            android:layout_alignTop="@+id/twitter_button"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/blog_btn_normal2x" />
 
@@ -144,8 +144,8 @@
             android:id="@+id/amazon_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/cdbaby_button"
-            android:layout_alignLeft="@+id/cdbaby_button"
+            android:layout_above="@+id/twitter_button"
+            android:layout_alignLeft="@+id/twitter_button"
             android:layout_marginBottom="15dp"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/amazon_btn_normal2x" />
@@ -155,7 +155,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/music_button"
-            android:layout_alignTop="@+id/twitter_button"
+            android:layout_alignTop="@+id/stream_button"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/youtube_btn_normal2x" />
 
@@ -163,21 +163,21 @@
             android:id="@+id/facebook_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/twitter_button"
+            android:layout_above="@+id/stream_button"
             android:layout_alignLeft="@+id/video_button"
             android:layout_marginBottom="15dp"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/facebook_btn_normal2x" />
 
         <ImageButton
-            android:id="@+id/twitter_button"
+            android:id="@+id/stream_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/amazon_button"
             android:layout_alignLeft="@+id/video_button"
             android:layout_marginBottom="15dp"
             android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/twitter_btn_normal2x" />
+            android:src="@drawable/list_online_btn_normal2x" />
 
     </RelativeLayout>
 
@@ -212,16 +212,16 @@
         android:background="@android:color/transparent"
         android:src="@drawable/buy_tickets_button" />
 
-    <ImageButton
-        android:id="@+id/stream_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/settings_button"
-        android:layout_alignRight="@id/settings_button"
-        android:layout_below="@id/tickets_button"
-        android:layout_marginTop="@dimen/sponsors_item_margin_top"
-        android:background="@android:color/transparent"
-        android:src="@drawable/online_btn"/>
+    <!--<ImageButton-->
+        <!--android:id="@+id/stream_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@id/settings_button"-->
+        <!--android:layout_alignRight="@id/settings_button"-->
+        <!--android:layout_below="@id/tickets_button"-->
+        <!--android:layout_marginTop="@dimen/sponsors_item_margin_top"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:src="@drawable/online_btn"/>-->
 
     <RelativeLayout
         android:id="@+id/flags_popup"
