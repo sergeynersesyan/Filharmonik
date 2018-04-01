@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -52,7 +53,6 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         }
     }
 
-    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -305,8 +305,8 @@ public class MainMenuActivity extends ApoFullScreenActivity {
         ImageView ministry = (ImageView) findViewById(R.id.logo_img);
         ministry.setImageDrawable(getResources().getDrawable(R.drawable.ministry));
 
-        ImageView socialLabel = (ImageView) findViewById(R.id.social_label);
-        socialLabel.setImageDrawable(getResources().getDrawable(R.drawable.menu_social));
+        TextView socialLabel = findViewById(R.id.social_label);
+        socialLabel.setText(getResources().getString(R.string.social_section_name));
 
         setLinkHandler(R.id.facebook_button, FACEBOOK_LINK_INDEX, getString(R.string.TITLE_FACEBOOK));
         setLinkHandler(R.id.twitter_button, TWITTER_LINK_INDEX, getString(R.string.TITLE_TWITTER));
